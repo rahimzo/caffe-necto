@@ -4,92 +4,119 @@ class CustomFooter extends HTMLElement {
     this.shadowRoot.innerHTML = `
       <style>
         footer {
-          background-color: #f5f1e9;
-          color: #8b5a2b;
-          padding: 2rem 0;
-          border-top: 1px solid #e8e0d1;
-        }
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 1rem;
+          background-color: black;
+          color: white;
+          padding: 3rem 2rem;
         }
         .footer-content {
+          max-width: 1200px;
+          margin: 0 auto;
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
           gap: 2rem;
         }
-        h3 {
-          font-size: 1.25rem;
-          font-weight: 600;
-          margin-bottom: 1rem;
-          color: #6b4521;
+        .footer-section h3 {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.2rem;
+          margin-bottom: 1.5rem;
+          position: relative;
+          display: inline-block;
         }
-        ul {
-          list-style: none;
-          padding: 0;
+        .footer-section h3:after {
+          content: '';
+          position: absolute;
+          bottom: -8px;
+          left: 0;
+          width: 40px;
+          height: 1px;
+          background-color: white;
         }
-        li {
-          margin-bottom: 0.5rem;
+        .footer-section p, .footer-section a {
+          color: #aaa;
+          line-height: 1.6;
+          margin-bottom: 0.8rem;
+          display: block;
         }
-        a {
-          color: #8b5a2b;
-          text-decoration: none;
-          transition: color 0.3s ease;
+        .footer-section a:hover {
+          color: white;
         }
-        a:hover {
-          color: #d4af37;
-        }
-        .social-icons {
+        .social-links {
           display: flex;
           gap: 1rem;
+          margin-top: 1rem;
+        }
+        .social-links a {
+          color: white;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(255, 255, 255, 0.1);
+          transition: all 0.3s ease;
+        }
+        .social-links a:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+          transform: translateY(-3px);
         }
         .copyright {
           text-align: center;
-          margin-top: 2rem;
-          padding-top: 1rem;
-          border-top: 1px solid #e8e0d1;
-          font-size: 0.875rem;
+          margin-top: 3rem;
+          padding-top: 2rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          color: #666;
+          font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+          .footer-content {
+            grid-template-columns: 1fr;
+          }
         }
       </style>
+
       <footer>
-        <div class="container">
-          <div class="footer-content">
-            <div>
-              <h3>Location</h3>
-              <p>123 Coffee Lane<br>Beanville, BV 12345</p>
-            </div>
-            <div>
-              <h3>Hours</h3>
-              <ul>
-                <li>Mon-Fri: 7am - 7pm</li>
-                <li>Sat-Sun: 8am - 6pm</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Links</h3>
-              <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h3>Connect</h3>
-              <div class="social-icons">
-                <a href="#"><i data-feather="facebook"></i></a>
-                <a href="#"><i data-feather="instagram"></i></a>
-                <a href="#"><i data-feather="twitter"></i></a>
-              </div>
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Location</h3>
+            <p>12 Bruton Street</p>
+            <p>Mayfair, London W1J 6PY</p>
+            <p>United Kingdom</p>
+            <a href="https://maps.google.com/maps?q=Caffè+Necto+London" target="_blank">View on Map</a>
+          </div>
+          <div class="footer-section">
+            <h3>Hours</h3>
+            <p>Monday - Friday: 8am - 8pm</p>
+            <p>Saturday: 9am - 7pm</p>
+            <p>Sunday: 10am - 5pm</p>
+          </div>
+          <div class="footer-section">
+            <h3>Connect</h3>
+            <a href="tel:+442045678901">+44 20 4567 8901</a>
+            <a href="mailto:hello@caffenecto.com">hello@caffenecto.com</a>
+            <div class="social-links">
+              <a href="https://instagram.com/caffenecto" target="_blank" aria-label="Instagram"><i data-feather="instagram"></i></a>
+              <a href="https://facebook.com/caffenecto" target="_blank" aria-label="Facebook"><i data-feather="facebook"></i></a>
+              <a href="https://wa.me/442045678901" target="_blank" aria-label="WhatsApp"><i data-feather="message-circle"></i></a>
             </div>
           </div>
-          <div class="copyright">
-            <p>&copy; ${new Date().getFullYear()} Caffè Necto. All rights reserved.</p>
-          </div>
+        </div>
+        <div class="copyright">
+          &copy; ${new Date().getFullYear()} Caffè Necto. All rights reserved.
         </div>
       </footer>
     `;
+
+    // Activate Feather icons inside the Shadow DOM
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/feather-icons';
+    script.onload = () => {
+      if (window.feather) {
+        window.feather.replace();
+      }
+    };
+    this.shadowRoot.appendChild(script);
   }
 }
+
 customElements.define('custom-footer', CustomFooter);
