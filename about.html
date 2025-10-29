@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caffè Necto | About</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+</head>
+<body class="font-poppins bg-cream-50 text-coffee-900">
+    <custom-navbar></custom-navbar>
+    <div class="pt-20"></div> <!-- Add padding to account for fixed navbar -->
+    
+    <!-- About Header -->
+<section class="relative py-32 flex items-center justify-center bg-gradient-to-br from-coffee-800 to-coffee-600 overflow-hidden">
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <img src="http://static.photos/food/1200x630/45" alt="Café Team" class="absolute w-full h-full object-cover">
+        <div class="container mx-auto px-6 z-20 text-center text-cream-50">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Our Story</h1>
+            <p class="text-xl md:text-2xl">The people behind Caffè Necto</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <h2 class="text-3xl font-bold mb-6">Where Every Cup Connects Us</h2>
+                <p class="text-lg mb-6">
+                    Founded in 2015, Caffè Necto began as a dream to create a space where coffee brings people together. 
+                    Our founder, Maria Rodriguez, envisioned a café that wasn't just about great coffee, but about the 
+                    connections made over each cup.
+                </p>
+                <p class="text-lg">
+                    Today, we continue that tradition by sourcing the finest beans, crafting delicious drinks with care, 
+                    and providing a welcoming space for our community to gather, work, and connect.
+                </p>
+            </div>
+
+            <!-- Team Section -->
+            <h2 class="text-3xl font-bold text-center mb-12">Meet Our Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Team Member 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="http://static.photos/people/640x360/301" alt="Maria Rodriguez" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Maria Rodriguez</h3>
+                        <p class="text-gold-500 font-medium mb-2">Founder & Head Barista</p>
+                        <p class="text-coffee-600">
+                            With over 15 years in the coffee industry, Maria's passion for creating community through coffee is the heart of Necto.
+                        </p>
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="http://static.photos/people/640x360/302" alt="James Chen" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">James Chen</h3>
+                        <p class="text-gold-500 font-medium mb-2">Pastry Chef</p>
+                        <p class="text-coffee-600">
+                            Trained in Paris, James brings French baking techniques to our pastry case with a local twist.
+                        </p>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="http://static.photos/people/640x360/303" alt="Olivia Smith" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Olivia Smith</h3>
+                        <p class="text-gold-500 font-medium mb-2">Manager</p>
+                        <p class="text-coffee-600">
+                            Olivia ensures every visit to Necto is a delightful experience, overseeing operations with warmth and efficiency.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <custom-footer></custom-footer>
+
+    <script>
+        feather.replace();
+    </script>
+  <script src="components/footer.js"></script>
+</body>
+</html>
