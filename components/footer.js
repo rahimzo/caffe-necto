@@ -63,6 +63,11 @@ class CustomFooter extends HTMLElement {
         .social-links svg {
           width: 20px;
           height: 20px;
+          stroke: #f5f0e6;
+          transition: stroke 0.3s ease;
+        }
+        .social-links a:hover svg {
+          stroke: #d4af37; /* gold hover */
         }
         .copyright {
           text-align: center;
@@ -100,22 +105,13 @@ class CustomFooter extends HTMLElement {
             <a href="mailto:hello@caffenecto.com">hello@caffenecto.com</a>
             <div class="social-links">
               <a href="https://instagram.com/caffenecto" target="_blank" aria-label="Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
-                </svg>
+                <i data-feather="instagram"></i>
               </a>
               <a href="https://facebook.com/caffenecto" target="_blank" aria-label="Facebook">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.5l.5-4H14V7a1 1 0 0 1 1-1h3z"></path>
-                </svg>
+                <i data-feather="facebook"></i>
               </a>
               <a href="https://wa.me/442045678901" target="_blank" aria-label="WhatsApp">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M20.52 3.48A11.64 11.64 0 0 0 12 0a11.64 11.64 0 0 0-8.48 3.52A11.61 11.61 0 0 0 0 12c0 2 .52 3.92 1.52 5.6L0 24l6.52-1.68A11.62 11.62 0 0 0 12 24a11.64 11.64 0 0 0 8.52-3.52A11.61 11.61 0 0 0 24 12a11.64 11.64 0 0 0-3.48-8.52zM12 22a9.64 9.64 0 0 1-4.96-1.36l-.36-.2-3.88 1 1.04-3.76-.24-.36A9.6 9.6 0 0 1 2 12a9.64 9.64 0 0 1 2.84-6.8A9.64 9.64 0 0 1 12 2a9.64 9.64 0 0 1 6.8 2.84A9.64 9.64 0 0 1 22 12a9.64 9.64 0 0 1-2.84 6.8A9.64 9.64 0 0 1 12 22z"></path>
-                  <path d="M17 15.5c-.3-.15-1.8-.9-2.07-1-.28-.1-.48-.15-.68.15s-.78 1-.96 1.2-.36.22-.66.08a7.88 7.88 0 0 1-2.3-1.42 8.74 8.74 0 0 1-1.6-1.98c-.16-.27 0-.42.12-.57.13-.13.3-.33.45-.5.15-.17.2-.28.3-.46.1-.18.05-.34 0-.5-.05-.15-.68-1.65-.93-2.26-.25-.6-.5-.52-.68-.52H6.9c-.18 0-.47.07-.72.34-.25.27-.95.93-.95 2.26s.98 2.62 1.12 2.8a11.4 11.4 0 0 0 4.32 4.3c.6.26 1.06.42 1.42.54.6.19 1.14.16 1.57.1.48-.07 1.48-.6 1.7-1.18.2-.58.2-1.08.14-1.18z"></path>
-                </svg>
+                <i data-feather="message-circle"></i>
               </a>
             </div>
           </div>
@@ -125,6 +121,19 @@ class CustomFooter extends HTMLElement {
         </div>
       </footer>
     `;
+
+    // ✅ Load Feather icons properly inside the Shadow DOM
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/feather-icons';
+    script.onload = () => {
+      const icons = this.shadowRoot.querySelectorAll('i[data-feather]');
+      icons.forEach(icon => {
+        const name = icon.getAttribute('data-feather');
+        const svg = feather.icons[name].toSvg();
+        icon.outerHTML = svg;
+      });
+    };
+    this.shadowRoot.appendChild(script);
   }
 }
 
