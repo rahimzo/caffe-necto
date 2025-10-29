@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caffè Necto | Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+</head>
+<body class="font-poppins bg-cream-50 text-coffee-900">
+    <custom-navbar></custom-navbar>
+    <div class="pt-20"></div> <!-- Add padding to account for fixed navbar -->
+    
+    <!-- Gallery Header -->
+<section class="relative py-32 flex items-center justify-center bg-gradient-to-br from-coffee-800 to-coffee-600 overflow-hidden">
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <img src="http://static.photos/food/1200x630/44" alt="Café Interior" class="absolute w-full h-full object-cover">
+        <div class="container mx-auto px-6 z-20 text-center text-cream-50">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Our Gallery</h1>
+            <p class="text-xl md:text-2xl">A glimpse into the Necto experience</p>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Image 1 -->
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="http://static.photos/food/640x360/201" alt="Coffee Art" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-feather="maximize" class="w-8 h-8 stroke-cream-50"></i>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="http://static.photos/food/640x360/202" alt="Café Interior" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-feather="maximize" class="w-8 h-8 stroke-cream-50"></i>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="http://static.photos/food/640x360/203" alt="Pastry Display" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-feather="maximize" class="w-8 h-8 stroke-cream-50"></i>
+                    </div>
+                </div>
+                <!-- Image 4 -->
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="http://static.photos/food/640x360/204" alt="Barista at Work" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-feather="maximize" class="w-8 h-8 stroke-cream-50"></i>
+                    </div>
+                </div>
+                <!-- Image 5 -->
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="http://static.photos/food/640x360/205" alt="Outdoor Seating" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-feather="maximize" class="w-8 h-8 stroke-cream-50"></i>
+                    </div>
+                </div>
+                <!-- Image 6 -->
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="http://static.photos/food/640x360/206" alt="Coffee Beans" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-feather="maximize" class="w-8 h-8 stroke-cream-50"></i>
+                    </div>
+                </div>
+                <!-- Image 7 -->
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="http://static.photos/food/640x360/207" alt="Latte Art" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-feather="maximize" class="w-8 h-8 stroke-cream-50"></i>
+                    </div>
+                </div>
+                <!-- Image 8 -->
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="http://static.photos/food/640x360/208" alt="Breakfast Table" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-feather="maximize" class="w-8 h-8 stroke-cream-50"></i>
+                    </div>
+                </div>
+                <!-- Image 9 -->
+                <div class="relative group overflow-hidden rounded-lg">
+                    <img src="http://static.photos/food/640x360/209" alt="Friends at Café" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <i data-feather="maximize" class="w-8 h-8 stroke-cream-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <custom-footer></custom-footer>
+
+    <script>
+        feather.replace();
+    </script>
+  <script src="components/footer.js"></script>
+</body>
+</html>
